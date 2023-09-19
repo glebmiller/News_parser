@@ -6,10 +6,8 @@ import telegram
 import settings
 #from telegram import ParseMode
 
-bot = Bot('5505110126:AAHut6yfejJSpUrp0JzNTsjn9ymStAfaonM')
-dp = Dispatcher(bot)
 
-
+bot_key = config("bot_key")
 # Remember to use your own values from my.telegram.org!
 api_id = config("API_ID")
 api_hash = config('API_HASH')
@@ -21,6 +19,9 @@ KEY_WORDS = settings.KEY_WORDS
 #print(api_id)
 #print(api_hash)
 client = TelegramClient('anon', api_id, api_hash)
+
+bot = Bot(bot_key)
+dp = Dispatcher(bot)
 
 
 async def process_news(event, source, chatid):
